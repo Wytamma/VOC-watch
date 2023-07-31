@@ -9,5 +9,17 @@
             "XBB.1.9.2",
             "EG.5",
             "XBB.2.3"
+      ],
+      "https://www.gov.uk/government/publications/sars-cov-2-genome-sequence-prevalence-and-growth-rate": [
+            "EG.1",
+            "XBB.2.3",
+            "XBB.1.9.2",
+            "XBB.1",
+            "XBB.1.16.1",
+            "XBB.1.9.1",
+            "XBB.1.16",
+            "BA.2",
+            "XBB.1.5",
+            "FL.3.1"
       ]
 }
