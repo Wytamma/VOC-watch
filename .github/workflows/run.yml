@@ -1,0 +1,50 @@
+on:
+  push:
+    branches: 
+      - master
+      - main
+  schedule:
+      - cron: '0 * * * *'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      # If you wanted to use multiple Python versions, you'd have specify a matrix in the job and
+      # reference the matrixe python version here.
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10
+
+      - name: Install pipenv
+        run: |
+            python -m pip install --upgrade pipenv wheel
+
+      - id: cache-pipenv
+        uses: actions/cache@v1
+        with:
+          path: ~/.local/share/virtualenvs
+          key: ${{ runner.os }}-pipenv-${{ hashFiles('**/Pipfile.lock') }}
+
+      - name: Install dependencies
+        if: steps.cache-pipenv.outputs.cache-hit != 'true'
+        run: |
+          pipenv install --deploy --dev
+      
+      - name: Run voc-watch
+        run: |
+          pipenv run python app.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "wytamma"
+          git config --global user.email "wytamma.wirth@me.com"
+          if [ "$(git status --porcelain | head -1)" ]
+          then
+            git add -A
+            git commit -m ":tada: voc-watch"
+            git push
+          fi
