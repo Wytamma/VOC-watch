@@ -27,7 +27,6 @@ class Watcher:
             collapse_file = f"collapse_files/{name}.txt"
             print(f"Fetching {url}...")
             res = self.fetch(url)
-            new_text = res.text
             vocs_in_db = self.db.get(url)
             list_of_vocs: list = func(res)
             if list_of_vocs is None:
