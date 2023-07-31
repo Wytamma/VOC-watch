@@ -1,10 +1,11 @@
+from typing import List
 from voc_watch import Watcher, Response
 from bs4 import BeautifulSoup
 
 voc_watcher = Watcher('voc_watch.db')
 
 @voc_watcher.register(url="https://www.who.int/activities/tracking-SARS-CoV-2-variants")
-def who(res: Response):
+def who(res: Response) -> List[str]:
     soup = BeautifulSoup(res.text, 'html.parser')
     tables = soup.find_all('table')
     list_of_vocs = []
