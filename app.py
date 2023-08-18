@@ -1,9 +1,16 @@
 from typing import List
 from voc_watch import Watcher, Response
 from bs4 import BeautifulSoup
+import re 
 
 voc_watcher = Watcher('voc_watch.db')
 
+def extract_first_pango_lineage(text: str) -> str:
+    pattern = re.compile(r'[A-Z]{1,3}(?:\.\d+(?:\.\d+)*)?')
+    match = pattern.search(text)
+    if match:
+        return match.group(0)
+    
 @voc_watcher.register(url="https://www.who.int/activities/tracking-SARS-CoV-2-variants")
 def who(res: Response) -> List[str]:
     soup = BeautifulSoup(res.text, 'html.parser')
@@ -14,7 +21,7 @@ def who(res: Response) -> List[str]:
         for row in rows[1:]:
             cols = row.find_all('td')
             pango_lineage: str = cols[0].get_text(strip=True)
-            pango_lineage = pango_lineage.rstrip('*').rstrip("#")
+            pango_lineage = extract_first_pango_lineage(pango_lineage)
             list_of_vocs.append(pango_lineage)
     return list_of_vocs
 
@@ -34,8 +41,7 @@ def ukhsa(res: Response) -> List[str]:
     for row in rows[1:]:
         cols = row.find_all('td')
         pango_lineage: str = cols[0].get_text(strip=True)
-        pango_lineage = pango_lineage.rstrip('*').rstrip("#")
-        pango_lineage, *_ = pango_lineage.split()
+        pango_lineage = extract_first_pango_lineage(pango_lineage)
         list_of_vocs.append(pango_lineage)
     return list_of_vocs
 
