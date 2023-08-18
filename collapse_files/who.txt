@@ -8,7 +8,7 @@ XBB
 XBB.1.9.1
 XBB.1.9.2
 XBB.2.3
-BA.2.86(Only 3 sequences available. Added as VUM based on the large number of mutations identified)
+BA.2.86
 # Capture all other lineages
 A
 B
