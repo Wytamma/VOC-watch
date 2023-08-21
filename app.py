@@ -46,7 +46,9 @@ def ukhsa(res: Response) -> List[str]:
     return list_of_vocs
 
 def combine_results(results: List[List[str]]) -> List[str]:
-    combined_results = list(set([item for sublist in results for item in sublist]))
+    combined_results = sorted(
+        list(set([item for sublist in results for item in sublist]))
+    )
     collapse_file = "collapse_files/combined.txt"
     with open(collapse_file, "w") as f:
         combined_results.extend(["# Capture all other lineages", "A", "B", "Recombinant"])
