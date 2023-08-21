@@ -10,6 +10,7 @@ def extract_first_pango_lineage(text: str) -> str:
     match = pattern.search(text)
     if match:
         return match.group(0)
+    raise ValueError(f"Could not extract pango lineage from {text}")
     
 @voc_watcher.register(url="https://www.who.int/activities/tracking-SARS-CoV-2-variants")
 def who(res: Response) -> List[str]:
