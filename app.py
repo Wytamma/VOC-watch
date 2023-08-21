@@ -45,6 +45,18 @@ def ukhsa(res: Response) -> List[str]:
         list_of_vocs.append(pango_lineage)
     return list_of_vocs
 
+def combine_results(results: List[List[str]]) -> List[str]:
+    combined_results = list(set([item for sublist in results for item in sublist]))
+    collapse_file = "collapse_files/combined.txt"
+    with open(collapse_file, "w") as f:
+        combined_results.extend(["# Capture all other lineages", "A", "B", "Recombinant"])
+        for lineage in combined_results:
+            if not lineage:
+                continue
+            f.write(f"{lineage}\n")
+
 
 if __name__ == "__main__":
     voc_watcher.run()
+    results = [voc_watcher.db.get(key) for key in voc_watcher.db]
+    combine_results(results)
