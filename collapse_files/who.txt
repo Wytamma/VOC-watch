@@ -2,8 +2,7 @@
 XBB.1.5
 XBB.1.16
 EG.5
-BA.2.75
-CH.1.1
+DV.7
 XBB
 XBB.1.9.1
 XBB.1.9.2
