@@ -46,6 +46,26 @@ def ukhsa(res: Response) -> List[str]:
         list_of_vocs.append(pango_lineage)
     return list_of_vocs
 
+@voc_watcher.register(url="https://www.cdc.gov/coronavirus/2019-ncov/variants/variant-classifications.html")
+def cdc(res: Response) -> List[str]:
+    soup = BeautifulSoup(res.text, 'html.parser')
+    # find all divs with attribute row="row"
+    # Find all divs that represent columns
+    columns = soup.find_all('div', class_='col-md-3')
+
+    # List to store Pango Lineages
+    pango_lineages = []
+
+    for column in columns:
+        # Check if the column header is 'Pango Lineage'
+        if 'Pango Lineage' in column.text:
+            # Find the next div with role='cell' which contains the Pango Lineage
+            next_cell = column.find_next('div', {'role': 'cell'})
+            if next_cell:
+                pango_lineages.append(next_cell.get_text(strip=True))
+    pango_lineages = [extract_first_pango_lineage(lineage) for lineage in pango_lineages]
+    return [lineage for lineage in pango_lineages if len(lineage) > 1]
+        
 def combine_results(results: List[List[str]]) -> List[str]:
     combined_results = sorted(
         list(set([item for sublist in results for item in sublist]))
