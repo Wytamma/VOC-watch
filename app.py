@@ -49,7 +49,6 @@ def ukhsa(res: Response) -> List[str]:
 @voc_watcher.register(url="https://www.cdc.gov/coronavirus/2019-ncov/variants/variant-classifications.html")
 def cdc(res: Response) -> List[str]:
     soup = BeautifulSoup(res.text, 'html.parser')
-    # find all divs with attribute row="row"
     # Find all divs that represent columns
     columns = soup.find_all('div', class_='col-md-3')
 
