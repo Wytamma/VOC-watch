@@ -1,13 +1,11 @@
-# This file was automatically generated from https://www.who.int/activities/tracking-SARS-CoV-2-variants on the 20/12/2023
+# This file was automatically generated from https://www.who.int/activities/tracking-SARS-CoV-2-variants on the 30/01/2024
 XBB.1.5
 XBB.1.16
 EG.5
 BA.2.86
 JN.1
-DV.7
 XBB
 XBB.1.9.1
-XBB.1.9.2
 XBB.2.3
 # Capture all other lineages
 A
