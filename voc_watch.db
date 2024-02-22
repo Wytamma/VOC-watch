@@ -10,17 +10,16 @@
             "XBB.2.3"
       ],
       "https://www.gov.uk/government/publications/sars-cov-2-genome-sequence-prevalence-and-growth-rate": [
-            "JN.1",
-            "JN.1.4",
+            "JN.1.7",
+            "JN.1.18",
+            "JN.1.22",
+            "JN.1.8",
             "GE.1.2.1",
-            "JN.6",
-            "JN.1.1",
+            "JN.1.4",
+            "JN.1",
             "JN.2",
-            "JD.1.1",
-            "HV.1",
-            "BA.2.86.1",
-            "JN.3",
-            "JG.3"
+            "JN.1.1",
+            "BA.2.86.1"
       ],
       "https://www.cdc.gov/coronavirus/2019-ncov/variants/variant-classifications.html": [
             "BA.2.86",

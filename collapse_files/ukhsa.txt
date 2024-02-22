@@ -1,15 +1,14 @@
-# This file was automatically generated from https://www.gov.uk/government/publications/sars-cov-2-genome-sequence-prevalence-and-growth-rate on the 01/02/2024
-JN.1
-JN.1.4
+# This file was automatically generated from https://www.gov.uk/government/publications/sars-cov-2-genome-sequence-prevalence-and-growth-rate on the 22/02/2024
+JN.1.7
+JN.1.18
+JN.1.22
+JN.1.8
 GE.1.2.1
-JN.6
-JN.1.1
+JN.1.4
+JN.1
 JN.2
-JD.1.1
-HV.1
+JN.1.1
 BA.2.86.1
-JN.3
-JG.3
 # Capture all other lineages
 A
 B
