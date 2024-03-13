@@ -19,7 +19,3 @@ B.1.617.3
 B.1.1.529
 P.2
 B.1.621
-# Capture all other lineages
-A
-B
-Recombinant
