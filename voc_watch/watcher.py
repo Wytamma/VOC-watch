@@ -43,7 +43,7 @@ class Watcher:
             with open(collapse_file, "w") as f:
                 date = datetime.datetime.now().strftime("%d/%m/%Y")
                 list_of_vocs = [f"# This file was automatically generated from {url} on the {date}", *list_of_vocs]
-                list_of_vocs.extend(["# Capture all other lineages", "A", "B", "Recombinant"])
+                # list_of_vocs.extend(["# Capture all other lineages", "A", "B", "Recombinant"])
                 for lineage in list_of_vocs:
                     if not lineage:
                         continue
