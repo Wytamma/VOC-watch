@@ -9,7 +9,3 @@ JN.1
 JN.2
 JN.1.1
 BA.2.86.1
-# Capture all other lineages
-A
-B
-Recombinant
