@@ -4,7 +4,11 @@
             "XBB.1.16",
             "EG.5",
             "BA.2.86",
-            "JN.1"
+            "JN.1",
+            "JN.1.7",
+            "KP.2",
+            "KP.3",
+            "JN.1.18"
       ],
       "https://www.gov.uk/government/publications/sars-cov-2-genome-sequence-prevalence-and-growth-rate": [
             "JN.1.11.1",
