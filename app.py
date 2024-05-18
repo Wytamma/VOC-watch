@@ -76,6 +76,12 @@ def combine_results(results: List[List[str]]) -> List[str]:
             if not lineage:
                 continue
             f.write(f"{lineage}\n")
+    strict_collapse_file = "collapse_files/strict_combined.txt"
+    with open(strict_collapse_file, "w") as f:
+        for lineage in combined_results:
+            if not lineage:
+                continue
+            f.write(f"{lineage}\n")
 
 
 if __name__ == "__main__":
