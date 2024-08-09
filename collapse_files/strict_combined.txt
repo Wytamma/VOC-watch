@@ -12,15 +12,19 @@ BA.2.74
 BA.2.86
 CH.1.1
 JN.1
-JN.1.11.1
-JN.1.16
 JN.1.18
-JN.1.4
 JN.1.7
-JN.1.7.1
+KP.1.1
 KP.2
+KP.2.3
 KP.3
+KP.3.1
 KP.3.1.1
+KP.3.1.4
+KP.3.2
+KP.3.2.4
+KP.3.3
+KS.1
 LB.1
 P.1
 P.2
@@ -29,7 +33,6 @@ XBB.1.5
 XBB.1.9.1
 XBB.1.9.2
 XBB.2.3
-XDK
 # Capture all other lineages
 A
 B
