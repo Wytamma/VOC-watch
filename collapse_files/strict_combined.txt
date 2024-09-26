@@ -33,6 +33,7 @@ XBB.1.5
 XBB.1.9.1
 XBB.1.9.2
 XBB.2.3
+XEC
 # Capture all other lineages
 A
 B
