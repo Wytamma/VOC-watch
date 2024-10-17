@@ -15,7 +15,3 @@ KP.3.3
 KS.1
 LB.1
 XEC
-# Capture all other lineages
-A
-B
-Recombinant
