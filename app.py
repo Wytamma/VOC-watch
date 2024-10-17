@@ -69,15 +69,15 @@ def combine_results(results: List[List[str]]) -> List[str]:
     combined_results = sorted(
         list(set([item for sublist in results for item in sublist]))
     )
-    collapse_file = "collapse_files/combined.txt"
-    with open(collapse_file, "w") as f:
-        combined_results.extend(["# Capture all other lineages", "A", "B", "Recombinant"])
+    strict_collapse_file = "collapse_files/strict_combined.txt"
+    with open(strict_collapse_file, "w") as f:
         for lineage in combined_results:
             if not lineage:
                 continue
             f.write(f"{lineage}\n")
-    strict_collapse_file = "collapse_files/strict_combined.txt"
-    with open(strict_collapse_file, "w") as f:
+    collapse_file = "collapse_files/combined.txt"
+    with open(collapse_file, "w") as f:
+        combined_results.extend(["# Capture all other lineages", "A", "B", "Recombinant"])
         for lineage in combined_results:
             if not lineage:
                 continue
