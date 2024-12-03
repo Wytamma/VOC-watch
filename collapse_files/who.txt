@@ -1,7 +1,5 @@
-# This file was automatically generated from https://www.who.int/activities/tracking-SARS-CoV-2-variants on the 26/09/2024
-BA.2.86
+# This file was automatically generated from https://www.who.int/activities/tracking-SARS-CoV-2-variants on the 03/12/2024
 JN.1
-JN.1.7
 KP.2
 KP.3
 KP.3.1.1
